@@ -32,14 +32,14 @@
 int main(int argc, const char * argv[])
 {
 
-    const IB::Complex z1 (2, 5);
+    IB::Complex z1 (2, 5);
     IB::Complex* z2 = new IB::Complex(3, -4);
 
     IB::Complex z3 ;
     z3 = z1+(*z2);
     // dygresja: dlaczego mozliwe jest ponizsze dodawanie, skoro jest
     // zaimplementowany tylko operator dwoch liczb zespolonych
-    z3 = z1*34.0;
+    z3 = z1* ((IB::Complex)34.0);
 
 
     delete z2;

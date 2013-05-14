@@ -10,7 +10,7 @@ namespace IB {
     *
     * Korzysta z listy inicjalizacyjnej.
     */
-    Complex::Complex(double re, double im) : re_ (re), im_ (im) {
+    Complex::Complex( double re, double im) : re_ (re), im_ (im) {
         std::cerr << "Complex: konstruktor domyslny.\n"  ;
 
     }
@@ -24,26 +24,26 @@ namespace IB {
     }
 
 
-    Complex Complex::operator+ (const Complex& c)   const {
+    Complex Complex::operator+ ( Complex c)    {
         Complex suma;
         suma.re_ = re_ + c.re_;
         suma.im_ = im_ + c.im_;
         return suma;
     }
 
-    double Complex::getRe() const {
+    double Complex::getRe()  {
         return re_;
     }
 
-    double Complex::getIm() const {
+    double Complex::getIm()  {
         return im_;
     }
 
-    void Complex::setRe(double re) {
+    void Complex::setRe( double re) {
         re_ = re;
     }
 
-    void Complex::setIm(double im) {
+    void Complex::setIm( double im) {
         im_ = im;
     }
 
@@ -52,17 +52,17 @@ namespace IB {
         return std::sqrt(re_*re_+im_*im_);
     }
 
-    Complex Complex::operator* (const Complex& c)   const {
+    Complex Complex::operator* ( Complex c)    {
         return Complex(re_*c.re_-im_*c.im_,  re_*c.im_+c.re_*im_);
     }
 
 
-    bool Complex::operator== (const Complex& c)   const {
+    bool Complex::operator== ( Complex c)    {
         return ((re_==c.re_) && (im_==c.im_));
     }
 
 
-    bool Complex::operator== (const double d)   const {
+    bool Complex::operator== ( double d)    {
         return (re_ == d);
     }
 
@@ -72,7 +72,7 @@ namespace IB {
     }
     */
 
-    double Complex::operator[](int index) const {
+    double Complex::operator[](int index)  {
         switch (index) {
             case 0:
                 return re_;
@@ -91,19 +91,19 @@ namespace IB {
 /** Konstruktor kopiujacy. Implementacja. Dla odmiany - poza blokiem namespace.
  *
  */
-IB::Complex::Complex(const IB::Complex& c) : re_(c.re_), im_(c.im_) {
+IB::Complex::Complex( const IB::Complex& c) : re_(c.re_), im_(c.im_) {
     std::cerr << "Complex: konstruktor kopiujacy.\n"  ;
 }
 
 /** Ponownie przestrzen nazw IB */
 namespace IB {
 
-std::ostream& operator<< (std::ostream& os, const Complex& c) {
+std::ostream& operator<< (std::ostream& os,  Complex c) {
     os << c.re_ << " " << c.im_;
     return os;
 }
 
-std::istream& operator>> (std::istream& is, const Complex& c) {
+std::istream& operator>> (std::istream& is,  Complex c) {
     is >> c.re_ >> c.im_;
     return is;
 }

@@ -11,13 +11,13 @@ class Complex {
     double re_;
     double im_;
 public:
-    Complex(double re=0.0, double im=0.0) ;
-    Complex(const Complex& c);
+    Complex( double re=0.0, double im=0.0) ;
+    Complex( const Complex& c);
     ~Complex() ;
 
 
-    double getRe() const;
-    double getIm() const;
+    double getRe() ;
+    double getIm() ;
     void setRe(double re);
     void setIm(double im);
 
@@ -25,26 +25,26 @@ public:
     double abs();
 
     /** Operator dodawania.*/
-    Complex operator+ (const Complex& c)   const;
+    Complex operator+ ( Complex c)   ;
 
     /** Operator mnozenia.*/
-    Complex operator* (const Complex& c)   const;
+    Complex operator* ( Complex c)   ;
 
     /** Operator porownania.*/
-    bool operator== (const Complex& c)   const;
+    bool operator== ( Complex c)   ;
 
     /** Operator porownania z liczba rzeczywista.*/
-    bool operator== (const double d)   const;
+    bool operator== ( double d)   ;
 
     //Operator rzutowania - niezaimplementowany
     //operator double() const;
 
-    double operator[](int index) const;
+    double operator[](int index) ;
 
     /** Deklaracje przyjazni */
-    friend Complex operator- (const Complex&c1, const Complex& c2);
-    friend std::ostream& operator<< (std::ostream& os, const Complex&);
-    friend std::istream& operator>> (std::istream& is, const Complex&);
+    friend Complex operator- ( Complex c1,  Complex  c2);
+    friend std::ostream& operator<< (std::ostream& os,  Complex c);
+    friend std::istream& operator>> (std::istream& is,  Complex c);
 
 }; //koniec klasy IB::Complex
 
@@ -55,15 +55,15 @@ public:
     /** Operator odejmowania. Metoda globalna.
      *  PROBLEM: Jak zapewnic dostep do skladnikow prywatnych?
      */
-    Complex operator- (const Complex&c1, const Complex& c2);
+    Complex operator- ( Complex c1,  Complex  c2);
 
     /** Operator wypisywania do strumienia wyjsciowego
     */
-    std::ostream& operator<< (std::ostream& os, const Complex& c);
+    std::ostream& operator<< (std::ostream& os,  Complex  c);
 
     /** Operator pobierania ze strumienia wejsciowego
     */
-    std::istream& operator>> (std::istream& is, const Complex& c);
+    std::istream& operator>> (std::istream& is,  Complex  c);
 
 }
 
