@@ -41,6 +41,12 @@ int main(int argc, const char * argv[])
     // zaimplementowany tylko operator dwoch liczb zespolonych
     z3 = z1*34.0;
 
+    z3.showAllDateTime();
+    z3.getRe();
+    z3.showAllDateTime();
+    z3.setIm(3.12);
+    z3.showAllDateTime();
+
 
     delete z2;
     return 0;
