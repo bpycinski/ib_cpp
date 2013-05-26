@@ -1,53 +1,29 @@
-
 #include <iostream>
-#include "Complex.h"
-
-/** Do samodzielnego wykonania:
-*
-* Zaimplementowac metode:
-*
-* zwracajaca modul
-* ustawiajaca i zwracjaca czesc rzeczywista i urojona (setRe, getIm...)
-*
-* Zaimplementowac operator:
-*
-* jako funkcja zaprzyjazniona:
-*
-* wypisywania liczby do strumienia <<
-* wczytywania danych ze strumienia >> w formacie dwoch liczb oddzielonych bialym znakiem
-* odejmowania dwoch liczb zespolonych
-*
-* jako publiczna funkcja skladowa:
-*
-* mnozenia
-* porownania dwoch liczb zespolonych
-* porownania liczby zespolonej i liczby rzeczywistej
-* konwersji na liczbe rzeczywista (zwraca czesc rzeczywista)
-* tablicowy zwracajacy: [0] - czesc rzeczywista; [1] - czesc urojona
-* (*) tablicowy, umozliwiajacy przypisanie np. z[1] = 2.71;
-*
-*/
+#include "Figura.h"
+#include "Czworokat.h"
+#include "Prostokat.h"
+#include "Kwadrat.h"
 
 
-int main(int argc, const char * argv[])
-{
+int main(int argv, char** argc) {
 
-    const IB::Complex z1 (2, 5);
-    IB::Complex* z2 = new IB::Complex(3, -4);
-
-    IB::Complex z3 ;
-    z3 = z1+(*z2);
-    // dygresja: dlaczego mozliwe jest ponizsze dodawanie, skoro jest
-    // zaimplementowany tylko operator dwoch liczb zespolonych
-    z3 = z1*34.0;
-
-    z3.showAllDateTime();
-    z3.getRe();
-    z3.showAllDateTime();
-    z3.setIm(3.12);
-    z3.showAllDateTime();
+    Figura f0 ;
+    Czworokat cz0;
+    Prostokat p0;
+    Kwadrat k0;
 
 
-    delete z2;
+    Czworokat cz1 (1.2, 4.7, 9.5, 6.1);
+    Prostokat p1 (4.9, 8.01);
+    Kwadrat k1 (8.2);
+
+
+    std::cout << cz1.obwod() << "\n";
+    std::cout << p1.pole() << "\n";
+    std::cout << k1.pole() << "\n";
+
+
+
+
     return 0;
 }

@@ -2,10 +2,10 @@ default: all
 
 build: all
 
-all: Complex.o main.o
-	g++ Complex.o main.o -o a.exe
+all: Figura.o Czworokat.o Prostokat.o Kwadrat.o main.o
+	g++ Figura.o Czworokat.o Prostokat.o Kwadrat.o main.o -o a.exe
 
 clean:
-	rm -rf main.o Complex.o a.exe
+	rm -rf *.o a.exe
 
 
